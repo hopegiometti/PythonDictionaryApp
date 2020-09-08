@@ -15,9 +15,13 @@ def returnaword(w):
     elif len(get_close_matches(fixedword, list(data.keys()), cutoff=0.8)) > 0:
         close_ws = get_close_matches(fixedword, list(data.keys()), cutoff=0.8)
         closest = close_ws[0]
-        yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % closest)
-        if yn == "Y":
+        yn = input("Did you mean %s instead? Enter y if yes, or n if no: " % closest)
+        if yn == "y":
             return data[closest]
+        elif yn == "n":
+            return "This word does not exist. Please double check your spelling!"
+        else:
+            return "We didn't understand your entry."
     else:
         return "This word does not exist. Please double check your spelling!"
 
