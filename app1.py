@@ -27,6 +27,14 @@ def returnaword(w):
 
 word = input("Enter word: ")
 
-print(returnaword(word))
+output = returnaword(word)
+
+if type(output) == list:
+    for item in output:
+        print(item)
+else:
+    print(output)
+
+# print(returnaword(word))
 
 
